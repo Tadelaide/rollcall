@@ -1,0 +1,127 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+    <title>Final</title>
+    <link rel="stylesheet" href="Final.css" />
+
+</head>
+
+<body>
+    <header>
+        <img src="./header.png" />
+    </header>
+    <!-- <div class="intro">
+        <div class="introItem">
+            <div class="introPhoto">
+                <a href="#">
+                    <img src="icon.png" alt="Cloud Computing" height="100px">
+                </a>
+            </div>
+            <div class="introDescription">
+                <h2>TC国际高中社团大奖 总决赛</h2>
+                <h2>TC Awards Final Round</h2>
+            </div>
+        </div>
+    </div>
+    <div class="subtitle">
+        <p>社团组队展示完整活动方案 前30</p>
+    </div> -->
+
+
+    <main role="main">
+        <article>
+            <div class="content">
+                <div class="currentSocietyName grid_item">当前社团：</div>
+                <div class="nextSocietyName grid_item">预备社团：</div>
+                <div class="currentSociety grid_item">
+                    <div class="currentName">
+                        <div id="currentName">To Be Determined</div>
+                    </div>
+                </div>
+                <div class="nextSociety grid_item">
+                    <div class="nextName">
+                        <div id="NextName">To Be Determined</div>
+                    </div>
+                </div>
+                <div class="nextButton grid_item">
+                    <button onclick="demo()" id="startButton">开始</button>
+                </div>
+            </div>
+
+
+        </article>
+
+
+    </main>
+
+    <footer>
+        Produced by- Sara, Tade | Contact: wangletian0131@hotmail.com
+    </footer>
+
+    <script>
+        //获取显示框的内容
+        var Uname = document.getElementById('NextName');
+        //要随机的名单
+        var arr = ['F01', 'F02', 'F03', 'F04', 'F05', 'F06', 'F07', 'F08'];
+        //获取按钮信息
+        var btn = document.getElementById('startButton');
+        //定义变量存放计时器
+        var clock = 0;
+        //定义变量存放索引值
+        var inde = null;
+        //第二个显示框
+        var current = document.getElementById('currentName');
+        // 定义是否开启计时器的标志，如果为真开始执行 如果为假则停止
+        var st = true;
+        // 存放名单
+        // prizes=[];
+        function demo() {
+            if (st) {
+                transfer();
+                start();
+                btn.innerHTML = "结束";
+                st = false;
+            } else {
+                stop();
+                btn.innerHTML = "开始";
+                st = true;
+                
+            }
+        }
+        // 开始函数
+        function start() {
+            if (arr.length == 0) {
+                Uname.style.visibility = "hidden";
+            }
+            clock = setInterval(function () {
+                var inde = rand(0, arr.length - 1);
+                Uname.innerHTML = arr[inde];
+            }, 50);//设置每50毫秒实行一次
+
+        }
+        // 结束点名
+        function stop() {
+            //从列表最后添加元素
+            // prizes.push(Uname.innerHTML);
+            //关闭定时器
+            clearInterval(clock);
+            //获取名字对应的索引值
+            arr.splice(arr.indexOf(Uname.innerHTML), 1);
+
+        }
+        function transfer() {
+            if (Uname.innerHTML == "undefined") {
+                current.innerHTML = "Finished";
+                btn.style.display = "none"
+            }
+            else {
+                current.innerHTML = Uname.innerHTML;
+            }
+        }
+        // 封装获取随机数 函数
+        function rand(m, n) {
+            return Math.floor(Math.random() * (n - m + 1) + m);
+        }
+    </script>
+
+</body>

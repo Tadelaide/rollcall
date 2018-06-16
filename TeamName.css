@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #dfdfdd;
+    margin: auto;
+    font-family: 'Microsoft YaHei';
+    /* max-width: 1250px; */
+
+}
+
+body header {
+    background-color: black;
+    /*margin-top: 150px;*/
+}
+
+body header img {
+    width: 100%;
+}
+
+.subtitle p {
+    font-size: 24px;
+    padding: 20px;
+    box-shadow: 1px 1px 1px 1px #848484;
+    background: #CCFF99;
+}
+
+main {
+    display: grid;
+    grid-auto-rows: min-content;
+}
+
+article {
+    background: white;
+    /* box-shadow: 1px 1px 1px 1px #848484; */
+    max-width: calc(100vw - 10px);
+    position: relative;
+    padding: 30px 20px;
+    background-color: white;
+    margin: 10px;
+    font-size: 30px;
+    height: 600px;
+}
+
+.content{
+    display: grid;
+    grid-template-rows: repeat(6, min-content);
+    grid-template-columns: 10% 25% 40% 25%;
+    grid-auto-rows: min-content;
+    margin: 10px;
+}
+.grid_item{
+    padding: 10px;
+}
+
+.currentSocietyName {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.nextSocietyName{
+    grid-row: 5;
+    grid-column: 2;
+}
+
+.currentSociety{
+    grid-row: 1 / span 3;
+    grid-column: 3;
+}
+
+.nextSociety{
+    grid-row: 4 / span 6;
+    grid-column: 3;
+}
+
+.teamBuilt{
+    grid-row: 1;
+    grid-column: 4;
+}
+
+.teamUnbuilt{
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.coopTeamOne{
+    grid-row: 3;
+    grid-column: 4;
+}
+
+.coopTeamOneName{
+    grid-row: 4;
+    grid-column: 4;
+}
+
+.coopTeamTwo{
+    grid-row: 5;
+    grid-column: 4;
+}
+
+.coopTeamTwoName{
+    grid-row: 6;
+    grid-column: 4;
+}
+
+
+.buttonList{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    margin-top: 10px;
+
+}
+.nextButton{
+    grid-column: 1;
+}
+
+.finishButton{
+    grid-column: 2;
+}
+
+.resultButtonArea{
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+
+
+.nextButton button, .finishButton button, .resultButton button{
+    /* background-color: #698B22; */
+    background-color: #000;
+    color: white;
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+}
+.resultButton button {
+    width: 30%;
+}
+
+.nextButton input :hover, .finishButton input :hover{
+    background-color: red;
+}
+
+.coopTeamOneName input, .coopTeamTwoName input{
+    width: 60%;
+    height: 40px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.currentName{
+    width: 100%;
+    /* text-align: center; */
+    font-size: 70px;
+    padding-top: 5%;
+}
+
+.nextName{
+    width: 100%;
+    /* text-align: center; */
+    font-size: 50px;
+    padding-top: 10%;
+}
+
+.resultArticle{
+  display: none;
+}
+
+.result{
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns: 10% 25% 40% 25%;
+  grid-auto-rows: min-content;
+  margin: 10px;
+}
+
+.failedSocietyLabel {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+
+.failedSocietyName{
+    grid-row: 1 / span 3;
+    grid-column: 3;
+}
+
+.failedName{
+    width: 100%;
+    /* text-align: center; */
+    font-size: 30px;
+    padding-top: 10%;
+}
+
+/* intro part */
+
+.intro {
+    background: #99cc33;
+    display: block;
+    box-shadow: 1px 1px 1px 1px #848484;
+    padding: 20px;
+    margin: 10% 0 0 0;
+
+}
+
+.introItem {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.introPhoto {
+    display: table-cell;
+    width: 33.3333%;
+    padding: 8px 16px !important;
+}
+
+.introDescription {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    padding: 8px 16px !important;
+}
+
+
+
+/*footer part*/
+
+footer {
+    /*background: #336699;*/
+    background: black;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px #848484;
+    margin-bottom: 10%;
+}

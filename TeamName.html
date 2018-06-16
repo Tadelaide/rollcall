@@ -1,0 +1,312 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+    <title>社团组队展示完整活动方案 100进30</title>
+    <link rel="stylesheet" href="TeamName.css" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <script type="text/javascript" src="jquery.min.js"></script> -->
+
+</head>
+
+<body>
+    <header>
+        <img src="./header.png" />
+    </header>
+    <!-- <div class="intro">
+        <div class="introItem">
+            <div class="introPhoto">
+                <a href="#">
+                    <img src="icon.png" alt="Cloud Computing" height="100px">
+                </a>
+            </div>
+            <div class="introDescription">
+                <h2>TC国际高中社团大奖 总决赛</h2>
+                <h2>TC Awards Final Round</h2>
+            </div>
+        </div>
+    </div>
+    <div class="subtitle">
+        <p>社团组队展示完整活动方案 100进30</p>
+    </div> -->
+
+
+
+    <main role="main">
+        <article id="contentArticle">
+            <div class="content">
+                <div class="currentSocietyName grid_item">当前社团：</div>
+                <div class="nextSocietyName grid_item">预备社团：</div>
+                <div class="currentSociety grid_item">
+                    <div class="currentName">
+                        <div id="currentName">To Be<br/>Determined</div>
+                    </div>
+                </div>
+                <div class="nextSociety grid_item">
+                    <div class="nextName">
+                        <div id="NextName">To Be<br/>Determined</div>
+                    </div>
+                </div>
+                <div class="teamBuilt grid_item">
+                    <input type="radio" name="teamStatus" value="success"> 组队成功
+                </div>
+                <div class="teamUnbuilt grid_item">
+                    <input  type="radio" name="teamStatus" value="fail" checked> 组队失败
+                </div>
+                <div class="coopTeamOne grid_item">合作社团1：</div>
+                <div class="coopTeamOneName grid_item">
+                    <input id="coopTeamOne" type="text">
+                </div>
+
+                <div class="coopTeamTwo grid_item">合作社团2：</div>
+                <div class="coopTeamTwoName grid_item">
+                    <input id="coopTeamTwo" type="text">
+                </div>
+
+            </div>
+
+            <div class="buttonList" id="buttonList">
+                <div class="nextButton grid_item">
+                    <button onclick="demo()" id="startButton">开始</button>
+                </div>
+                <div class="finishButton grid_item">
+                    <button onclick="team()" id="buildTeamButton">组队</button>
+                </div>
+            </div>
+
+            <div class="resultButtonArea" id="resultButtonArea">
+                <div class="resultButton">
+                    <button onclick="giveResult()" id="resultButton">结果</button>
+                </div>
+            </div>
+
+        </article>
+        <article class="resultArticle" id="resultArticle">
+            <div class="result">
+                <div class="failedSocietyLabel grid_item">没有组队是：</div>
+                <div class="failedSocietyName grid_item">
+                    <div class="failedName">
+                        <div id="failedName">To Be Determined</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- <footer>
+            Produced by- Sara, Tade | Contact: wangletian0131@hotmail.com
+        </footer> -->
+    </main>
+
+    <footer>
+        Produced by- Sara, Tade | Contact: wangletian0131@hotmail.com
+    </footer>
+
+    <!-- 'A01','A02','A03','A04','A05','A06','A07','A08','A09','A10','A11','A12','A13','A14','A15','A16','A17','A18','A19','A20','B01','B02','B03','B04','B05','B06','B07','B08','B09','B10','B11','B12','B13','B14','B15','B16','B17','B18','C01','C02','C03','C04','C05','C06','C07','C08','C09','C10','C11','C12','D01','D02','D03','D04','D05','D06','D07','D08','D09','D10','D11','D12','D13','D14','D15','D16','D17','D18','D19','D20','D21','D22','D23','D24','D25','E01','E02','E03','E04','E05','E06','E07','E08','E09','F01','F02','F03','F04','F05','F06','F07' -->
+
+    <script>
+        //获取显示框的内容
+        var Uname = document.getElementById('NextName');
+        //要随机的名单
+        var unTeamed = ['A01', 'A02', 'A03', 'A04', 'A05', 'A06', 'A07', 'A08', 'A09', 'A10', 'A11', 'A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19', 'A20', 'B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18', 'C01', 'C02', 'C03', 'C04', 'C05', 'C06', 'C07', 'C08', 'C09', 'C10', 'C11', 'C12', 'D01', 'D02', 'D03', 'D04', 'D05', 'D06', 'D07', 'D08', 'D09', 'D10', 'D11', 'D12', 'D13', 'D14', 'D15', 'D16', 'D17', 'D18', 'D19', 'D20', 'D21', 'D22', 'D23', 'D24', 'D25', 'E01', 'E02', 'E03', 'E04', 'E05', 'E06', 'E07', 'E08', 'E09', 'F01', 'F02', 'F03', 'F04', 'F05', 'F06', 'F07'];
+        //原始队伍名单
+        var originTeam = ['A01', 'A02', 'A03', 'A04', 'A05', 'A06', 'A07', 'A08', 'A09', 'A10', 'A11', 'A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19', 'A20', 'B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B09', 'B10', 'B11', 'B12', 'B13', 'B14', 'B15', 'B16', 'B17', 'B18', 'C01', 'C02', 'C03', 'C04', 'C05', 'C06', 'C07', 'C08', 'C09', 'C10', 'C11', 'C12', 'D01', 'D02', 'D03', 'D04', 'D05', 'D06', 'D07', 'D08', 'D09', 'D10', 'D11', 'D12', 'D13', 'D14', 'D15', 'D16', 'D17', 'D18', 'D19', 'D20', 'D21', 'D22', 'D23', 'D24', 'D25', 'E01', 'E02', 'E03', 'E04', 'E05', 'E06', 'E07', 'E08', 'E09', 'F01', 'F02', 'F03', 'F04', 'F05', 'F06', 'F07'];
+        //获取按钮信息
+        var btn = document.getElementById('startButton');
+        //定义变量存放计时器
+        var clock = 0;
+        //定义变量存放索引值
+        var inde = null;
+        //第二个显示框
+        var current = document.getElementById('currentName');
+        // 定义是否开启计时器的标志，如果为真开始执行 如果为假则停止
+        var st = true;
+        // 存放名单
+        teamed = [];
+        //改变透明度的物品
+        var buttonList = document.getElementById('buttonList');
+        var resultButtonArea = document.getElementById('resultButtonArea');
+        var resultArticle = document.getElementById('resultArticle');
+        var contentArticle = document.getElementById('contentArticle');
+        //
+        var teamSuccess = false
+        //
+        var radio = document.getElementsByName('teamStatus');
+        function demo() {
+            if (st) {
+                if (!getRadio()||teamSuccess) {
+                    transfer();
+                    start();
+                    btn.innerHTML = "结束";
+                    st = false;
+                    
+                    if (teamSuccess){
+                        radio[1].checked = "checked";
+                        teamSuccess = false;
+                    }
+                }
+            } else {
+                stop();
+                btn.innerHTML = "开始";
+                st = true;
+
+            }
+        }
+        // 开始函数
+        function start() {
+            if (unTeamed.length == 0) {
+                Uname.style.visibility = "hidden";
+            }
+            clock = setInterval(function () {
+                var inde = rand(0, unTeamed.length - 1);
+                Uname.innerHTML = unTeamed[inde];
+            }, 50);//设置每50毫秒实行一次
+
+        }
+        // 结束点名
+        function stop() {
+            //从列表最后添加元素
+            // teamed.push(Uname.innerHTML);
+            //关闭定时器
+            clearInterval(clock);
+            //获取名字对应的索引值
+            unTeamed.splice(unTeamed.indexOf(Uname.innerHTML), 1);
+        }
+        //传送已选对象
+        function transfer() {
+            if (Uname.innerHTML == "undefined") {
+                current.innerHTML = "Finished";
+                buttonList.style.display = "none";
+                resultButtonArea.style.display = "block";
+                
+
+            }
+            else {
+                if (teamed.indexOf(Uname.innerHTML) != -1) {
+                    current.innerHTML = "To Be Determined";
+                }
+                else {
+                    current.innerHTML = Uname.innerHTML;
+                    
+                }
+            }
+        }
+
+        //得到text信息
+        var textOne = document.getElementById('coopTeamOne');
+        var textTwo = document.getElementById('coopTeamTwo');
+        //组队摁钮
+        function team() {
+            if (getRadio()) {
+                // if (checkIsTeamed(textOne) || checkIsTeamed(textTwo)) {
+                //     teamed.push(current.innerHTML);
+                //     if (textOne.value.toUpperCase() != "") {
+                //         teamed.push(textOne.value.toUpperCase());
+                //     }
+                //     if (textTwo.value.toUpperCase() != "") {
+                //         teamed.push(textTwo.value.toUpperCase());
+                //     }
+                //     alert(current.innerHTML + " " + textOne.value.toUpperCase() + " " + textTwo.value.toUpperCase() + "\n组队成功")
+                // }
+                if (textOne.value == "" && textTwo.value == "") {
+                    alert("请输入队伍名称")
+                }
+                else if (current.innerHTML == "To Be Determined" || current.innerHTML == "To Be<br>Determined"){
+                    alert("当前队伍名错误，无法组队，请调整组队状态")
+                }
+                else if (textOne.value == textTwo.value){
+                    alert("队伍名称输入重复")
+                }
+                else if (textOne.value == current.innerHTML || textTwo.value == current.innerHTML){
+                    alert("合作队伍与当前队伍相同")
+                }
+                else if (textOne.value == "") {
+                    if (checkIsTeamed(textTwo)) {
+                        teamed.push(current.innerHTML);
+                        teamed.push(textTwo.value.toUpperCase());
+                        alert(current.innerHTML + ", " + textTwo.value.toUpperCase() + "\n组队成功");
+                        unTeamed.splice(unTeamed.indexOf(textTwo.value.toUpperCase()), 1);
+                        teamSuccess = true;
+                        textTwo.value = "";
+                        // diff();
+                    }
+                }
+                else if (textTwo.value == "") {
+                    if (checkIsTeamed(textOne)) {
+                        teamed.push(current.innerHTML);
+                        teamed.push(textOne.value.toUpperCase());
+                        alert(current.innerHTML + ", " + textOne.value.toUpperCase() + "\n组队成功");
+                        unTeamed.splice(unTeamed.indexOf(textOne.value.toUpperCase()), 1);
+                        teamSuccess = true;
+                        textOne.value = "";
+                        // diff();
+                    }
+                }
+                else if (checkIsTeamed(textOne) && checkIsTeamed(textTwo)) {
+                    teamed.push(current.innerHTML);
+                    teamed.push(textOne.value.toUpperCase());
+                    teamed.push(textTwo.value.toUpperCase());
+                    alert(current.innerHTML + ", " + textOne.value.toUpperCase() + ", " + textTwo.value.toUpperCase() + "\n组队成功");
+                    unTeamed.splice(unTeamed.indexOf(textTwo.value.toUpperCase()), 1);
+                    unTeamed.splice(unTeamed.indexOf(textOne.value.toUpperCase()), 1);
+                    teamSuccess = true;
+                    textTwo.value = "";
+                    textOne.value = "";
+                    // diff();
+                }
+
+            }
+        }
+        function getRadio() {
+            
+            if (radio[0].checked) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        function checkIsTeamed(teamName) {
+            if (originTeam.indexOf(teamName.value.toUpperCase()) == -1) {
+                alert(teamName.value.toUpperCase() + "\n输入有误，请重新输入。")
+                return false
+
+            }
+            else if (teamed.indexOf(teamName.value.toUpperCase()) != -1) {
+                alert(teamName.value.toUpperCase() + "\n已经组队,请重新输入。")
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        //结果展示
+        function giveResult() {
+            diff();
+            contentArticle.style.display = "none";
+            resultArticle.style.display = "block";
+
+        }
+
+        function diff() {
+            var arrNew = new Array();
+            for (var i = 0; i < originTeam.length; i++) {
+                var flag = true;
+                for (var j = 0; j < teamed.length; j++) {
+                    if (originTeam[i] == teamed[j])
+                        flag = false;
+                }
+                if (flag)
+                    arrNew.push(originTeam[i]);
+            }
+            var NewString = arrNew.join(", ")
+            // alert("差集：" + arrNew.toString());
+            failedName.innerHTML = NewString;
+
+        }
+        // 封装获取随机数 函数
+        function rand(m, n) {
+            return Math.floor(Math.random() * (n - m + 1) + m);
+        }
+    </script>
+</body>
